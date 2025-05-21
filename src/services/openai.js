@@ -52,6 +52,22 @@ function cosineSimilarity(a, b) {
   return dotProduct / (magA * magB);
 }
 
+/**
+ * Get a temperature indicator based on similarity score
+ * @param {number} similarity - Similarity score between 0 and 1
+ * @returns {string} - Temperature indicator (cold, cool, warm, hot, very hot)
+ */
+export const getTemperatureIndicator = (similarity) => {
+  const percentage = similarity * 100;
+  
+  if (percentage >= 95) return 'very hot';
+  if (percentage >= 80) return 'hot';
+  if (percentage >= 60) return 'warm';
+  if (percentage >= 40) return 'cool';
+  return 'cold';
+};
+
 export default {
-  calculateSimilarity
+  calculateSimilarity,
+  getTemperatureIndicator
 };
