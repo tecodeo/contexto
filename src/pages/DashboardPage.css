@@ -1,0 +1,141 @@
+/* Estilos para la página de dashboard con tema de juego */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+@media (min-width: 768px) {
+  .dashboard-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.welcome-section {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .welcome-section {
+    margin-bottom: 0;
+  }
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--light);
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.welcome-subtitle {
+  color: var(--gray-light);
+  font-size: 1.1rem;
+}
+
+.leaderboard-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.leaderboard-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.leaderboard-button:hover::before {
+  left: 100%;
+}
+
+.leaderboard-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(72, 219, 251, 0.5);
+}
+
+.trophy-icon {
+  font-size: 1.2rem;
+  color: var(--light);
+}
+
+.tabs-container {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.tabs-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.tab-button {
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--gray);
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  color: var(--light);
+}
+
+.tab-active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.tab-icon {
+  font-size: 1.1rem;
+}
+
+.tab-content {
+  margin-top: 2rem;
+}
+
+.create-game-wrapper {
+  display: flex;
+  justify-content: center;
+}
